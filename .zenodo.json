@@ -1,0 +1,13 @@
+{
+  "title": "gridshape",
+  "upload_type": "software",
+  "description": "gridshape: A Python module for drawing geometric shapes on a cell matrix with high‑resolution subgrid support, statistical analysis and visualisation.",
+  "creators": [
+    {
+      "name": "Keçeci, Mehmet",
+      "orcid": "0000-0001-9937-9839"
+    }
+  ],
+  "license": "agpl-license",
+  "access_right": "open"
+}

@@ -1,0 +1,6 @@
+# requirements-dev.txt
+numpy
+matplotlib
+scipy
+chess
+kha256
