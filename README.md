@@ -227,7 +227,7 @@ Genel toplam: 6050  Ort: 60.5
 Görseli kaydet? (png/jpg/pdf/svg/h):  jpg
 
 Kaydedildi: *.jpg
-<img src="https://github.com/WhiteSymmetry/gridshape/blob/main/example/2.jpg" alt="gridshape" align="right" height="640"/>
+<img src="https://github.com/WhiteSymmetry/gridshape/blob/main/example/2.jpg" alt="gridshape" align="right" height="360"/>
 
 --- MOD: TEK ŞEKİL | SUBGRID (1/2304) ---
 Kaplama: 15/100 hücre (%15.0)
@@ -259,7 +259,7 @@ Döndürme açısı (derece) (Varsayılan 45):
 Görseli kaydet? (png/jpg/pdf/svg/h):  jpg
 
 Kaydedildi: *.jpg
-<img src="https://github.com/WhiteSymmetry/gridshape/blob/main/example/1.jpg" alt="gridshape" align="right" height="640"/>
+<img src="https://github.com/WhiteSymmetry/gridshape/blob/main/example/1.jpg" alt="gridshape" align="right" height="360"/>
 
 --- MOD: TEK ŞEKİL | SUBGRID (1/2304) ---
 Kaplama: 9/100 hücre (%9.0)
