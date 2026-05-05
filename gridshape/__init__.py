@@ -9,8 +9,9 @@ Main class: GridShape
 __version__ = "0.1.1"
 __author__ = "Mehmet Keçeci"
 
-from .gridshape import GridShape
+from .gridshape import GridShape, main
 
 __all__ = [
     "GridShape",
+    "main",
 ]
