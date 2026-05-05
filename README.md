@@ -35,7 +35,7 @@ The module is a single Python file. No external dependencies except **matplotlib
 Modül tek bir Python dosyasıdır. **matplotlib** ve **numpy** dışında harici bağımlılığı yoktur.
 
 ```bash
-pip install matplotlib numpy
+pip install gridshape
 ```
 
 Place `gridshape.py` in your project folder or Python path.
@@ -81,7 +81,7 @@ python gridshape.py
 
 ## Class Reference / Sınıf Referansı
 
-### `GridShapePro(outer_size=10, sub_res=48)`
+### `GridShape(outer_size=10, sub_res=48)`
 
 - **outer_size** – number of cells per row/column (default 10)  
   satır/sütun başına hücre sayısı
