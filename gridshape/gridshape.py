@@ -1,3 +1,11 @@
+# gridshape.py
+"""
+gridshape - A Python module for drawing geometric shapes on a cell matrix
+with high‑resolution subgrid support, statistical analysis and visualisation.
+
+Main class: GridShape
+"""
+
 import matplotlib.pyplot as plt
 import numpy as np
 import math
@@ -323,6 +331,165 @@ class GridShape:
         self._rebuild_layer()
         return True
 
+    @classmethod
+    def run_interactive(cls):
+        """İnteraktif menüyü başlatır (classmethod)."""
+        def get_input(prompt, default):
+            val = input(f"{prompt} (Varsayılan {default}): ").strip()
+            if val == '':
+                return default
+            try:
+                return float(val) if '.' in val else int(val)
+            except ValueError:
+                return default
+
+        size = get_input("Matris Boyutu (ana hücre sayısı)", 10)
+        gen = cls(outer_size=int(size), sub_res=48)
+
+        print("\nArka Plan Renkleri: 1:Beyaz, 2:Bulut, 3:Gümüş, 4:Kömür, 5:Açık Gri")
+        bg_choice = input("Seçim (1-5): ").strip() or '1'
+        gen.selected_bg = gen.bg_color_map.get(bg_choice, '#ffffff')
+
+        show_nums = input("Hücre numaraları gösterilsin mi? (E/h): ").lower() != 'h'
+        show_grid = input("Izgara çizgileri gösterilsin mi? (E/h): ").lower() != 'h'
+        show_ticks = input("Eksen değerleri gösterilsin mi? (E/h): ").lower() != 'h'
+
+        while True:
+            stats = gen.get_advanced_stats()
+            mode_str = "ÇOKLU ŞEKİL" if gen.cumulative_mode else "TEK ŞEKİL"
+            res_str = f"SUBGRID (1/{gen.sub_res**2})" if gen.subgrid_active else "KLASİK"
+            print(f"\n--- MOD: {mode_str} | {res_str} ---")
+            print(f"Kaplama: {stats['shape_cell_count']}/{size**2} hücre (%{stats['shape_percent_cells']})")
+            print("[1:Kare/Dikdörtgen] [2:Daire] [3:Üçgen] [4:Elmas] [5:Çokgen] [7:Döndür (subgrid)]")
+            print("[6:Çoklu/Tekli] [S:Subgrid Aç/Kapa] [8:Geri Al] [9:Temizle] [0:Çıkış]")
+            ch = input("Seçim: ").upper()
+
+            if ch == '0':
+                break
+            elif ch == '6':
+                gen.cumulative_mode = not gen.cumulative_mode
+                continue
+            elif ch == 'S':
+                gen.subgrid_active = not gen.subgrid_active
+                gen.shapes_history = []
+                gen.reset_all()
+                continue
+            elif ch == '8':
+                if gen.shapes_history:
+                    gen.shapes_history.pop()
+                    gen._rebuild_layer()
+                continue
+            elif ch == '9':
+                gen.shapes_history = []
+                gen.reset_all()
+                continue
+            elif ch == '7':
+                if not gen.subgrid_active:
+                    print("Döndürme sadece SUBGRID modunda çalışır. Önce S ile subgrid'i açın.")
+                elif not gen.shapes_history:
+                    print("Döndürülecek şekil yok. Önce bir şekil çizin (1-5).")
+                else:
+                    row = get_input("Döndürme merkezi satırı", 5)
+                    col = get_input("Döndürme merkezi sütunu", 5)
+                    angle = get_input("Döndürme açısı (derece)", 45)
+                    if gen.rotate_last_shape(angle, row, col):
+                        print(f"Şekil {angle}° döndürüldü.")
+                        stats = gen.get_advanced_stats()
+                        gen.export_data(stats)
+                        print("\n--- MATRİS (ana hücreler) ---")
+                        for i in range(gen.outer_size):
+                            row_vals = []
+                            for j in range(gen.outer_size):
+                                val = gen.bg_matrix[i, j]
+                                if gen._get_cell_level_mask()[i, j]:
+                                    row_vals.append(f"[{val}]")
+                                else:
+                                    row_vals.append(f"{val:3}")
+                            print(" ".join(row_vals))
+                        print("\n--- İSTATİSTİKLER ---")
+                        print(f"Şekil içi hücre sayısı: {stats['shape_cell_count']} (%{stats['shape_percent_cells']})")
+                        fig, ax = gen.visualize(show_nums, show_grid, show_ticks)
+                        save = input("\nGörseli kaydet? (png/jpg/pdf/svg/h): ").lower()
+                        if save in ['png','jpg','pdf','svg']:
+                            fname = f"grid_{datetime.now().strftime('%Y%m%d_%H%M%S')}.{save}"
+                            plt.savefig(fname, dpi=300, bbox_inches='tight')
+                            print(f"Kaydedildi: {fname}")
+                        plt.show()
+                    else:
+                        print("Döndürme başarısız oldu.")
+                continue
+
+            params = {}
+            shape_type = 'square'
+            try:
+                if ch == '1':
+                    params = {'row': get_input("Başlangıç satırı", 2), 'col': get_input("Başlangıç sütunu", 2),
+                              'h': get_input("Yükseklik", 4), 'w': get_input("Genişlik", 4)}
+                    shape_type = 'rectangle'
+                elif ch == '2':
+                    params = {'row': get_input("Merkez satır", 5), 'col': get_input("Merkez sütun", 5),
+                              'radius': get_input("Yarıçap", 2.5)}
+                    shape_type = 'circle'
+                elif ch == '3':
+                    params = {'row': get_input("Tepe satırı", 2), 'col': get_input("Tepe sütunu", 5),
+                              'size': get_input("Kenar uzunluğu", 5)}
+                    shape_type = 'triangle'
+                elif ch == '4':
+                    params = {'row': get_input("Merkez satır", 5), 'col': get_input("Merkez sütun", 5),
+                              'size': get_input("Yarıçap", 2)}
+                    shape_type = 'diamond'
+                elif ch == '5':
+                    pts = input("Köşeler (satır,sütun) örn: 2,2 5,2 5,5 : ").strip()
+                    if pts == '':
+                        pts = "2,2 5,2 5,5"
+                    coords = []
+                    for pt in pts.split():
+                        try:
+                            r, c = map(int, pt.split(','))
+                            coords.append((r, c))
+                        except:
+                            pass
+                    if len(coords) < 3:
+                        print("En az 3 nokta girin. Varsayılan kullanılıyor.")
+                        coords = [(2,2), (5,2), (5,5)]
+                    params = {'coords': coords}
+                    shape_type = 'polygon'
+                else:
+                    print("Geçersiz seçim.")
+                    continue
+
+                gen.generate_shape(shape_type, params)
+                stats = gen.get_advanced_stats()
+                gen.export_data(stats)
+
+                print("\n--- MATRİS (ana hücreler) ---")
+                for i in range(size):
+                    row_vals = []
+                    for j in range(size):
+                        val = gen.bg_matrix[i, j]
+                        if gen._get_cell_level_mask()[i, j]:
+                            row_vals.append(f"[{val}]")
+                        else:
+                            row_vals.append(f"{val:3}")
+                    print(" ".join(row_vals))
+
+                print("\n--- İSTATİSTİKLER ---")
+                print(f"Şekil içi hücre sayısı: {stats['shape_cell_count']} (%{stats['shape_percent_cells']})")
+                print(f"Toplam: {stats['shape_sum']}  Ort: {stats['shape_mean']}  Std: {stats['shape_std']}")
+                print(f"Min: {stats['shape_min']}  Max: {stats['shape_max']}  Medyan: {stats['shape_median']}")
+                print(f"Arka plan toplam: {stats['bg_sum']}  Ort: {stats['bg_mean']}")
+                print(f"Genel toplam: {stats['total_sum']}  Ort: {stats['total_mean']}")
+
+                fig, ax = gen.visualize(show_nums, show_grid, show_ticks)
+                save = input("\nGörseli kaydet? (png/jpg/pdf/svg/h): ").lower()
+                if save in ['png','jpg','pdf','svg']:
+                    fname = f"grid_{datetime.now().strftime('%Y%m%d_%H%M%S')}.{save}"
+                    plt.savefig(fname, dpi=300, bbox_inches='tight')
+                    print(f"Kaydedildi: {fname}")
+                plt.show()
+            except Exception as e:
+                print(f"Hata: {e}. Lütfen parametreleri kontrol edin.")
+
 # ---- Kullanıcı arayüzü ----
 def get_input(prompt, default):
     val = input(f"{prompt} (Varsayılan {default}): ").strip()
@@ -490,4 +657,4 @@ def main():
             print(f"Hata: {e}. Lütfen parametreleri kontrol edin.")
 
 if __name__ == "__main__":
-    main()
+    GridShape.run_interactive()
