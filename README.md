@@ -46,12 +46,29 @@ Place `gridshape.py` in your project folder or Python path.
 
 ## Usage / Kullanım
 
+```bash
+
+from gridshape import GridShape
+import matplotlib.pyplot as plt
+
+g = GridShape(outer_size=10)
+g.generate_shape('square', {'row': 5, 'col': 5, 'h': 3, 'w': 3})
+g.visualize()
+plt.show()
+
+```
+
 Run the interactive menu:
 
 Etkileşimli menüyü başlatın:
 
 ```bash
-python gridshape.py
+
+from gridshape import GridShape
+
+# Interaktif menüyü başlatmak için:
+GridShape.run_interactive()
+
 ```
 
 ### Basic workflow / Temel iş akışı
