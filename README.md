@@ -1,5 +1,7 @@
 ```markdown
-# gridshape
+# gridshape (GridShape: Grid Shape)
+
+## gridshape (GridShape: Grid Shape) <img src="https://github.com/WhiteSymmetry/WhiteSymmetry/blob/main/docs/logo.jpg" alt="gridshape (Grid Shape)" align="right" height="140"/>
 
 **GridShape** – A Python module for drawing geometric shapes on a cell‑matrix with high‑resolution subgrid support, statistical analysis, and rich visualisation.
 
@@ -172,5 +174,95 @@ AGPL3.0-or-later License
 
 Developed for educational and simulation purposes.  
 Eğitim ve simülasyon amaçlı geliştirilmiştir.
+
+---
+
+Usage/Kullanım:
+
+Matris Boyutu (ana hücre sayısı) (Varsayılan 10):  
+
+Arka Plan Renkleri: 1:Beyaz, 2:Bulut, 3:Gümüş, 4:Kömür, 5:Açık Gri
+
+Seçim (1-5):  4
+Hücre numaraları gösterilsin mi? (E/h):  h
+Izgara çizgileri gösterilsin mi? (E/h):  h
+Eksen değerleri gösterilsin mi? (E/h):  h
+
+--- MOD: TEK ŞEKİL | KLASİK ---
+Kaplama: 0/100 hücre (%0.0)
+[1:Kare/Dikdörtgen] [2:Daire] [3:Üçgen] [4:Elmas] [5:Çokgen] [7:Döndür (subgrid)]
+[6:Çoklu/Tekli] [S:Subgrid Aç/Kapa] [8:Geri Al] [9:Temizle] [0:Çıkış]
+
+Seçim:  S
+
+--- MOD: TEK ŞEKİL | SUBGRID (1/2304) ---
+Kaplama: 0/100 hücre (%0.0)
+[1:Kare/Dikdörtgen] [2:Daire] [3:Üçgen] [4:Elmas] [5:Çokgen] [7:Döndür (subgrid)]
+[6:Çoklu/Tekli] [S:Subgrid Aç/Kapa] [8:Geri Al] [9:Temizle] [0:Çıkış]
+
+Seçim:  4
+Merkez satır (Varsayılan 5):  
+Merkez sütun (Varsayılan 5):  
+Yarıçap (Varsayılan 2):  
+
+
+--- MATRİS (ana hücreler) ---
+ 11  12  13  14  15  16  17  18  19  20
+ 21  22  23  24  25  26  27  28  29  30
+ 31  32  33  34 [35]  36  37  38  39  40
+ 41  42  43 [44] [45] [46]  47  48  49  50
+ 51  52 [53] [54] [55] [56] [57]  58  59  60
+ 61  62  63 [64] [65] [66] [67]  68  69  70
+ 71  72  73  74 [75] [76]  77  78  79  80
+ 81  82  83  84  85  86  87  88  89  90
+ 91  92  93  94  95  96  97  98  99 100
+101 102 103 104 105 106 107 108 109 110
+
+--- İSTATİSTİKLER ---
+Şekil içi hücre sayısı: 15 (%15.0)
+Toplam: 858  Ort: 57.2  Std: 11.33
+Min: 35  Max: 76  Medyan: 56.0
+Arka plan toplam: 5192  Ort: 61.08
+Genel toplam: 6050  Ort: 60.5
+
+Görseli kaydet? (png/jpg/pdf/svg/h):  jpg
+
+Kaydedildi: *.jpg
+<img src="[https://github.com/WhiteSymmetry/kececicurve/blob/main/docs/logo.jpg](https://github.com/WhiteSymmetry/gridshape/blob/main/example/2.jpg)" alt="gridshape" align="right" height="640"/>
+
+--- MOD: TEK ŞEKİL | SUBGRID (1/2304) ---
+Kaplama: 15/100 hücre (%15.0)
+[1:Kare/Dikdörtgen] [2:Daire] [3:Üçgen] [4:Elmas] [5:Çokgen] [7:Döndür (subgrid)]
+[6:Çoklu/Tekli] [S:Subgrid Aç/Kapa] [8:Geri Al] [9:Temizle] [0:Çıkış]
+
+Seçim:  7
+Döndürme merkezi satırı (Varsayılan 5):  
+Döndürme merkezi sütunu (Varsayılan 5):  
+Döndürme açısı (derece) (Varsayılan 45):  
+
+Şekil 45° döndürüldü.
+
+--- MATRİS (ana hücreler) ---
+ 11  12  13  14  15  16  17  18  19  20
+ 21  22  23  24  25  26  27  28  29  30
+ 31  32  33  34  35  36  37  38  39  40
+ 41  42  43 [44] [45] [46]  47  48  49  50
+ 51  52  53 [54] [55] [56]  57  58  59  60
+ 61  62  63 [64] [65] [66]  67  68  69  70
+ 71  72  73  74  75  76  77  78  79  80
+ 81  82  83  84  85  86  87  88  89  90
+ 91  92  93  94  95  96  97  98  99 100
+101 102 103 104 105 106 107 108 109 110
+
+--- İSTATİSTİKLER ---
+Şekil içi hücre sayısı: 9 (%9.0)
+
+Görseli kaydet? (png/jpg/pdf/svg/h):  jpg
+
+Kaydedildi: *.jpg
+<img src="[https://github.com/WhiteSymmetry/kececicurve/blob/main/docs/logo.jpg](https://github.com/WhiteSymmetry/gridshape/blob/main/example/1.jpg)" alt="gridshape" align="right" height="640"/>
+
+--- MOD: TEK ŞEKİL | SUBGRID (1/2304) ---
+Kaplama: 9/100 hücre (%9.0)
 
 ```
