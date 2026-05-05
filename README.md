@@ -1,6 +1,6 @@
 # gridshape (GridShape: Grid Shape)
 
-## gridshape (GridShape: Grid Shape) <img src="https://github.com/WhiteSymmetry/WhiteSymmetry/blob/main/docs/logo.jpg" alt="gridshape (Grid Shape)" align="right" height="140"/>
+## gridshape (GridShape: Grid Shape) <img src="https://github.com/WhiteSymmetry/gridshape/blob/main/docs/logo.jpg" alt="gridshape (Grid Shape)" align="right" height="140"/>
 
 **GridShape** – A Python module for drawing geometric shapes on a cell‑matrix with high‑resolution subgrid support, statistical analysis, and rich visualisation.
 
