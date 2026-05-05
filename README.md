@@ -1,4 +1,3 @@
-```markdown
 # gridshape (GridShape: Grid Shape)
 
 ## gridshape (GridShape: Grid Shape) <img src="https://github.com/WhiteSymmetry/WhiteSymmetry/blob/main/docs/logo.jpg" alt="gridshape (Grid Shape)" align="right" height="140"/>
@@ -265,4 +264,4 @@ Kaydedildi: *.jpg
 --- MOD: TEK ŞEKİL | SUBGRID (1/2304) ---
 Kaplama: 9/100 hücre (%9.0)
 
-```
+---
