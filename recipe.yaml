@@ -5,13 +5,13 @@ schema_version: 1
 # this sets up "context variables" (in this case name and version) that
 # can later be used in Jinja expressions
 context:
-  version: 0.1.1
+  version: 0.1.2
   name: gridshape
 
 # top level package information (name and version)
 package:
   name: gridshape
-  version: 0.1.1
+  version: 0.1.2
 
 # location to get the source from
 #`source` are `url`, `sha256`, `md5`, `patches`, `file_name` and `target_directory`
@@ -47,7 +47,7 @@ requirements:
 # information about the package
 about:
   homepage: https://github.com/WhiteSymmetry/gridshape/
-  license: GPL-3.0-or-later
+  license: AGPL-3.0-or-later
   summary: 'gridshape'
   description: |
     gridshape
