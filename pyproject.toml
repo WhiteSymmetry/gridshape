@@ -6,9 +6,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "gridshape"
-version = "0.1.1"
+version = "0.1.2"
 dynamic = ["keywords", "maintainers"]
-license = "GPL-3.0-or-later"  # SPDX ID
+license = "AGPL-3.0-or-later"  # SPDX ID
 
 authors = [
     { name="Mehmet Keçeci", email="enfo@tuta.io" },
@@ -37,6 +37,6 @@ Repository = "https://github.com/WhiteSymmetry/gridshape"
 
 [dependency-groups]
 build = [
-    "setuptools (>=82.0.1)",
+    "setuptools (>=84.0.0)",
     "cython (>=3.2.4)"
 ]
