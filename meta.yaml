@@ -2,7 +2,7 @@
 
 package:
   name: gridshape
-  version: {{ version }}
+  version: "0.1.2"
 
 source:
   path: .  # Derlemeyi bu meta.yaml dosyasının bulunduğu dizinden yap
