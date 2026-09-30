@@ -6,7 +6,7 @@ package:
 
 source:
   path: .  # Derlemeyi bu meta.yaml dosyasının bulunduğu dizinden yap
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/ad/da/e03a9bc4325d53d0a5c6426ed46e503773e6d841f8a0865afdcbe6991eba/gridshape-0.1.2.tar.gz
   blake2b-256: addae03a9bc4325d53d0a5c6426ed46e503773e6d841f8a0865afdcbe6991eba
 
 channels:
