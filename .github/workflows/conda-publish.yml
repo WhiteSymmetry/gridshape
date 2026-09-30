@@ -47,7 +47,7 @@ jobs:
           fi
           
           echo "PKG_VERSION=$PKG_VERSION" >> $GITHUB_ENV
-          echo "version=$PKG_VERSION" >> $GITHUB_OUTPUT
+          echo "version=$PKG_VERSION" >> $GITHUB_UT
 
       # ================================================================
       # ADIM 2: PyPI'den Source URL ve BLAKE2b-256 Hash Çek
@@ -193,7 +193,7 @@ jobs:
           conda build . \
             --python ${{ matrix.python-version }} \
             --no-test \
-            --output-folder ./dist
+            #--output-folder ./dist
           
           if [ -z "$(ls -A dist 2>/dev/null)" ]; then
             echo "❌ HATA: Hiçbir conda paketi oluşturulamadı!"
