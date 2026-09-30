@@ -193,7 +193,7 @@ jobs:
           conda build . \
             --python ${{ matrix.python-version }} \
             --no-test \
-            #--output-folder ./dist
+            --output-folder ./dist
           
           if [ -z "$(ls -A dist 2>/dev/null)" ]; then
             echo "❌ HATA: Hiçbir conda paketi oluşturulamadı!"
