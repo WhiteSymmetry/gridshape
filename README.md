@@ -4,7 +4,7 @@
 
 [![PyPI version](https://badge.fury.io/py/gridshape.svg)](https://badge.fury.io/py/gridshape/)
 [![License: AGPL](https://img.shields.io/badge/License-AGPL-yellow.svg)](https://opensource.org/licenses/AGPL)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19696338.svg)](https://doi.org/10.5281/zenodo.19696338)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.***.svg)](https://doi.org/10.5281/zenodo.***)
 [![WorkflowHub DOI](https://img.shields.io/badge/DOI-10.48546%2Fworkflowhub.datafile.***-blue)](https://doi.org/10.48546/workflowhub.datafile.***)
 [![figshare DOI](https://img.shields.io/badge/DOI-10.6084/m9.figshare.***-blue)](https://doi.org/10.6084/m9.figshare.***)
 
