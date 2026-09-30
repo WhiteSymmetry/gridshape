@@ -24,7 +24,7 @@ build:
 # the requirements at build and runtime
 requirements:
   host:
-    - python ${{ python_min }}.*
+    - python >=3.11
     - pip
     - hatchling >=1.28.0
     - setuptools
