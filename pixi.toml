@@ -26,7 +26,6 @@ pytest = "*"
 build = "python -m build"
 start = "python -c 'import gridshape; print(gridshape.__version__)'"
 lint = "ruff check ."
-fmt = "ruff format ."
 serve = { cmd = "python -m http.server", cwd = "docs" }
 install-gridshape = "pip install git+https://github.com/WhiteSymmetry/gridshape"
 install = "pip install -e ."
