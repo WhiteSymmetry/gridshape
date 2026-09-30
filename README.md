@@ -2,6 +2,35 @@
 
 ## gridshape (GridShape: Grid Shape) <img src="https://github.com/WhiteSymmetry/gridshape/blob/main/docs/logo.jpg" alt="gridshape (Grid Shape)" align="right" height="140"/>
 
+[![PyPI version](https://badge.fury.io/py/gridshape.svg)](https://badge.fury.io/py/gridshape/)
+[![License: AGPL](https://img.shields.io/badge/License-AGPL-yellow.svg)](https://opensource.org/licenses/AGPL)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19696338.svg)](https://doi.org/10.5281/zenodo.19696338)
+[![WorkflowHub DOI](https://img.shields.io/badge/DOI-10.48546%2Fworkflowhub.datafile.***-blue)](https://doi.org/10.48546/workflowhub.datafile.***)
+[![figshare DOI](https://img.shields.io/badge/DOI-10.6084/m9.figshare.***-blue)](https://doi.org/10.6084/m9.figshare.***)
+
+[![Anaconda-Server Badge](https://anaconda.org/bilgi/gridshape/badges/version.svg)](https://anaconda.org/bilgi/gridshape)
+[![Anaconda-Server Badge](https://anaconda.org/bilgi/gridshape/badges/latest_release_date.svg)](https://anaconda.org/bilgi/gridshape)
+[![Anaconda-Server Badge](https://anaconda.org/bilgi/gridshape/badges/platforms.svg)](https://anaconda.org/bilgi/gridshape)
+[![Anaconda-Server Badge](https://anaconda.org/bilgi/gridshape/badges/license.svg)](https://anaconda.org/bilgi/gridshape)
+
+[![Open Source](https://img.shields.io/badge/Open%20Source-Open%20Source-brightgreen.svg)](https://opensource.org/)
+[![Documentation Status](https://app.readthedocs.org/projects/gridshape/badge/?0.2.0=main)](https://gridshape.readthedocs.io/en/latest)
+[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/10536/badge)](https://www.bestpractices.dev/projects/10536)
+
+[![Python CI](https://github.com/WhiteSymmetry/gridshape/actions/workflows/python_ci.yml/badge.svg?branch=main)](https://github.com/WhiteSymmetry/gridshape/actions/workflows/python_ci.yml)
+[![codecov](https://codecov.io/gh/WhiteSymmetry/gridshape/graph/badge.svg?token=9GTLPAM8J7)](https://codecov.io/gh/WhiteSymmetry/gridshape)
+[![Documentation Status](https://readthedocs.org/projects/gridshape/badge/?version=latest)](https://gridshape.readthedocs.io/en/latest/)
+[![Binder](https://terrarium.evidencepub.io/badge_logo.svg)](https://terrarium.evidencepub.io/v2/gh/WhiteSymmetry/gridshape/HEAD)
+
+[![PyPI version](https://badge.fury.io/py/gridshape.svg)](https://badge.fury.io/py/gridshape)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
+[![Linted with Ruff](https://img.shields.io/badge/Linted%20with-Ruff-green?logo=python&logoColor=white)](https://github.com/astral-sh/ruff)
+[![Lang:Python](https://img.shields.io/badge/Lang-Python-blue?style=flat-square&logo=python)](https://python.org/)
+
+[![PyPI Downloads](https://static.pepy.tech/badge/gridshape)](https://pepy.tech/projects/gridshape)
+![PyPI Downloads](https://img.shields.io/pypi/dm/gridshape?logo=pypi&label=PyPi%20downloads)
+[![PyPI Downloads](https://static.pepy.tech/personalized-badge/gridshape?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/gridshape)
+
 **GridShape** – A Python module for drawing geometric shapes on a cell‑matrix with high‑resolution subgrid support, statistical analysis, and rich visualisation.
 
 **GridShape** – Bir hücre matrisi üzerine geometrik şekiller çizmek için yüksek çözünürlüklü alt‑ızgara desteği, istatistiksel analiz ve zengin görselleştirme sunan Python modülü.
