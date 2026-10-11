@@ -7,9 +7,9 @@ on:
         description: "Üretim modu"
         required: false
         default: "auto"
-
 permissions:
-  contents: write
+  contents: read
+  pull-requests: write
 
 jobs:
   generate:
